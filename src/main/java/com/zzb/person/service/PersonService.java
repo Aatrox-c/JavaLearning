@@ -14,7 +14,7 @@ public class PersonService {
     private final PersonAccessMethods personAccessMethods;
     // @Qualifier的作用是当IOC自动注入依赖的时候选择名称对应的接口实现类
     @Autowired
-    public PersonService(@Qualifier("fake") PersonAccessMethods personAccessMethods) {
+    public PersonService(@Qualifier("Mysql") PersonAccessMethods personAccessMethods) {
         this.personAccessMethods = personAccessMethods;
     }
 
