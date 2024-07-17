@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: zzb1362156
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/person
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true # 设置为true之后可以自动把数据库中的带有下划线的列名转换成驼峰命
+  type-handlers-package: com.zzb.person.typeHandler

@@ -1,0 +1,20 @@
+2024.7.17
+--
+    --  针对实体类中UUID和数据库中VARCHAR之间互相转换的问题，由于myBatis没有处理直接转换的方法，手写了typeHandler，
+        实现了UUID和VARCHAR的转换。
+    --  此外，在yml中也要引入typeHandler的配置 --> mybatis.type-handlers-package: com.zzb.person.typeHandler
+    --  在personMapper.xml中也要引入ResultMap，并且将typeHandler设置为对应的全类名
+
+--
+    --  关于Mapper的依赖注入，有两种方式，可以直接在每一个mapper类上添加@Mapper注解，或者在启动类上直接设置mapper的扫描包
+        @MapperScan("com.zzb.person.mapper")
+
+--
+    -- 在service注入DAO依赖时，可以在构造函数的参数上通过@Qualifier("Mysql")设置对应的DAO实现类，同时在DAO实现类上设置好别名
+       如@Component("Mysql")
+--
+    -- 如果需要校验参数，首先需要在对应的实体类上设置@Validated注解并且在对应的成员变量上设置好校验注解如@NotBlank @NotNull等，
+       同时在Controller中需要校验的方法的参数上设置好@Validated
+
+
+

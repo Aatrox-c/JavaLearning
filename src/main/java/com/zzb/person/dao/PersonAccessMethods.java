@@ -4,7 +4,7 @@ import com.zzb.person.pojo.Person;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
-@Component
+
 public interface PersonAccessMethods {
 
     void updatePerson(Person person);

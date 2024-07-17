@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zzb.person.mapper.PersonMapper">
+
+    <resultMap id="PersonResultMap" type="com.zzb.person.pojo.Person">
+        <result property="id" column="id" typeHandler="com.zzb.person.typeHandler.UUIDTypeHandler" />
+        <result property="name" column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="findAll" resultMap="PersonResultMap">
+        SELECT id, name FROM person_info
+    </select>
+
+    <select id="findOne" resultMap="PersonResultMap">
+        select id, name from person_info where id = #{id}
+    </select>
+
+</mapper>

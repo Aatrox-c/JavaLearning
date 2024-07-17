@@ -11,9 +11,9 @@ import java.util.UUID;
 @Validated
 public class Person {
 
-    private final UUID id;
+    private UUID id;
     @NotBlank(message = "name can not be blank")
-    private final String name;
+    private String name;
 
     public Person(@JsonProperty("id") UUID id, @JsonProperty("name") String name) {
         this.id = id;
@@ -26,5 +26,13 @@ public class Person {
 
     public UUID getId() {
         return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

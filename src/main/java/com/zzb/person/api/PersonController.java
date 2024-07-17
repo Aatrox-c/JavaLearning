@@ -3,6 +3,7 @@ package com.zzb.person.api;
 import com.zzb.person.pojo.Person;
 import com.zzb.person.service.PersonService;
 import jakarta.validation.constraints.NotBlank;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
